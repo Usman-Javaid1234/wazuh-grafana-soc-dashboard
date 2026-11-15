@@ -1,0 +1,18 @@
+# Wazuh Indexer: /etc/wazuh-indexer/opensearch.yml
+# Only the line changed for this setup is shown. The rest of the file stays as installed.
+#
+# By default the Indexer listens on the loopback interface only (127.0.0.1),
+# so an external Grafana instance cannot reach port 9200.
+# Setting network.host to 0.0.0.0 makes it listen on all interfaces.
+
+network.host: "0.0.0.0"
+
+# Apply the change:
+#   sudo systemctl restart wazuh-indexer
+#
+# Verify the binding (should show *:9200 or 0.0.0.0:9200, not 127.0.0.1:9200):
+#   sudo ss -tlnp | grep 9200
+#
+# Note: 0.0.0.0 is fine for an isolated lab network (host-only adapter).
+# In any real deployment, bind to a specific interface IP and restrict
+# access to port 9200 with a firewall.
