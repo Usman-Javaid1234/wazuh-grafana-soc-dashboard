@@ -122,9 +122,9 @@ The severity panel uses a **Convert field type** transformation that turns `rule
 
 | | |
 |---|---|
-| ![Full dashboard](screenshots/03-full-dashboard.png) | ![Alerts over time](screenshots/04-alerts-over-time.png) |
-| ![Alerts by severity](screenshots/05-alerts-by-severity.png) | ![Top 10 alert types](screenshots/06-top-10-alert-types.png) |
-| ![Alerts by agent](screenshots/07-alerts-by-agent.png) | ![Data source settings](screenshots/01-datasource-connection.png) |
+| ![Full dashboard](screenshots/Full%20dashboard%20view%20%E2%80%94%20all%20four%20panels.png) | ![Alerts over time](screenshots/Alerts%20over%20time%2C%20showing%20distinct%20activity%20spikes.png) |
+| ![Alerts by severity](screenshots/Alert%20counts%20by%20severity%20level%20%28rule.level%29.png) | ![Top 10 alert types](screenshots/Top%2010%20alert%20types%20by%20rule.description.png) |
+| ![Alerts by agent](screenshots/Alert%20distribution%20by%20agent%20%28SUIII%20vs%20wazuh-server%29.png) | ![Data source settings](screenshots/Grafana%20OpenSearch%20data%20source%20%E2%80%94%20connection%20URL%20and%20authentication%20settings.png) |
 
 ## Validation
 
@@ -137,8 +137,8 @@ Two panels were compared with the raw alert log on the Wazuh server. The command
 
 On the first comparison Grafana showed 471 for level 3 while the log showed 479. The gap closed once the Indexer had caught up with the log, which points to indexing lag rather than a wrong query.
 
-![Severity count validation](screenshots/08-validation-severity-count.png)
-![Agent split validation](screenshots/09-validation-agent-split.png)
+![Severity count validation](screenshots/Dashboard%20value%20%28479%29%20matching%20the%20raw%20alert%20log%20count%20for%20rule.level%20%3D%203.png)
+![Agent split validation](screenshots/Raw%20log%20agent%20counts%20%28SUIII-%20920%2C%20wazuh-server-%20113%29%20used%20to%20validate%20the%20agent%20panel.png)
 
 ## Challenges and fixes
 
